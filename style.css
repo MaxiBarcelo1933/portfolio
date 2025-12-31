@@ -5,26 +5,71 @@
 }
 
 body {
-    font-family: Arial, Helvetica, sans-serif;
-    background-color: #ffffff;
-    color: #000000;
+    font-family: 'Inter', system-ui, sans-serif;
+    background-color: var(--white);
+    color: var(--gray-dark);
     line-height: 1.6;
 }
 
-header {
-    padding: 40px 20px;
-    text-align: center;
-    border-bottom: 1px solid #000;
+.menu-toggle {
+    display: flex;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
 }
+
+
+p {
+    font-size: 16px;
+    font-weight: 400;
+    color: var(--gray-dark);
+    max-width: 65ch;
+}
+
+footer p {
+    color: var(--gray-medium);
+}
+
+.header {
+    border-bottom: 1px solid var(--gray-light);
+}
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    height: 90px;
+    width: auto;
+}
+
 
 header h1 {
     font-size: 32px;
-    font-weight: bold;
+    font-weight: 600;
+    color: var(--black);
 }
 
-nav {
-    border-bottom: 1px solid #000;
+section h2 {
+    font-size: 22px;
+    font-weight: 500;
+    color: var(--black);
+    margin-bottom: 20px;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 5px;
 }
+
+
+.nav {
+    display: flex;
+    gap: 28px;
+}
+
 
 nav ul {
     list-style: none;
@@ -34,20 +79,28 @@ nav ul {
     padding: 20px;
 }
 
-nav a {
+.nav a {
+    font-size: 14px;
+    font-weight: 500;
+    color: var(--gray-dark);
     text-decoration: none;
-    color: #000;
-    font-weight: bold;
 }
 
-nav a:hover {
-    text-decoration: underline;
+.nav a:hover {
+    color: var(--black);
 }
 
 section {
     max-width: 800px;
     margin: 60px auto;
     padding: 0 20px;
+    border-bottom: 1px solid var(--gray-light);
+    padding-bottom: 60px;
+}
+
+
+section:last-of-type {
+    border-bottom: none;
 }
 
 section h2 {
@@ -59,6 +112,7 @@ section h2 {
     border-bottom: 1px solid #000;
     padding-bottom: 5px;
 }
+
 
 
 section p {
@@ -74,9 +128,47 @@ footer {
 
 @media (max-width: 768px) {
     
-    header h1 {
-        font-size: 26px;
+   .menu-toggle {
+        display: flex;
+        width: 32px;
+        height: 24px;
+        background: red;
+        border: none;
+        cursor: pointer;
+
+        flex-direction: column;
+        justify-content: space-between;
     }
+.menu-toggle span {
+        height: 2px;
+        width: 100%;
+        background-color: #000;
+        display: block;
+    }
+
+
+   .header-inner {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+
+    .nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        gap: 18px;
+    }
+    .nav a {
+        font-size: 16px;
+    }
+
+    .nav.active {
+        display: flex;
+    }
+
 
     nav ul {
         flex-direction: column;
@@ -162,4 +254,29 @@ button:hover {
 .section-visible {
     opacity: 1;
     transform: translateY(0);
+}
+
+* {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root {
+    --black: #000000;
+    --gray-dark: #333333;
+    --gray-medium: #777777;
+    --gray-light: #e5e5e5;
+    --white: #ffffff;
+}
+
+input,
+textarea {
+    border: 1px solid var(--gray-light);
+    color: var(--gray-dark);
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--gray-dark);
+    outline: none;
 }
