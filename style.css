@@ -1,0 +1,165 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #ffffff;
+    color: #000000;
+    line-height: 1.6;
+}
+
+header {
+    padding: 40px 20px;
+    text-align: center;
+    border-bottom: 1px solid #000;
+}
+
+header h1 {
+    font-size: 32px;
+    font-weight: bold;
+}
+
+nav {
+    border-bottom: 1px solid #000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    padding: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+section {
+    max-width: 800px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+section h2 {
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #000;
+    padding-bottom: 5px;
+}
+
+
+section p {
+    font-size: 16px;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    border-top: 1px solid #000;
+    font-size: 14px;
+}
+
+@media (max-width: 768px) {
+    
+    header h1 {
+        font-size: 26px;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    section {
+        margin: 40px auto;
+    }
+}
+
+p {
+    max-width: 65ch;
+}
+
+nav a {
+    position: relative;
+}
+
+nav a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -4px;
+    width: 0;
+    height: 1px;
+    background: #000;
+    transition: width 0.3s ease;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+label {
+    font-weight: bold;
+}
+
+input,
+textarea {
+    padding: 10px;
+    border: 1px solid #000;
+    font-size: 14px;
+    font-family: inherit;
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+button {
+    background: #000;
+    color: #fff;
+    border: none;
+    padding: 12px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+button:hover {
+    opacity: 0.8;
+}
+
+#form-mensaje {
+    margin-top: 15px;
+    font-weight: bold;
+}
+
+.section-hidden {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
